@@ -1,0 +1,2853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Feast & Fête | Nigerian Food in Kola, Lagos</title>
+
+  <meta
+    name="description"
+    content="Feast & Fête — Nigerian food made for pickup and delivery in Kola, Lagos."
+  />
+
+  <meta name="theme-color" content="#111111" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #faf9f6;
+      color: #171717;
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ============================================
+       HEADER
+       ============================================ */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(250, 249, 246, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e7e3dc;
+    }
+
+    .header-inner {
+      width: min(1100px, 92%);
+      margin: auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #9a5b24;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #9a5b24;
+    }
+
+    .header-order {
+      background: #111111;
+      color: white;
+      border: none;
+      padding: 11px 17px;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+
+    .header-order:hover {
+      background: #333;
+    }
+
+    /* ============================================
+       HERO
+       ============================================ */
+
+    .hero {
+      width: min(1100px, 92%);
+      margin: auto;
+      padding: 70px 0 55px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #9a5b24;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 0.98;
+      letter-spacing: -2.5px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 520px;
+      color: #666;
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      border: none;
+      border-radius: 8px;
+      padding: 13px 19px;
+      font-weight: 700;
+    }
+
+    .primary-btn {
+      background: #111;
+      color: white;
+    }
+
+    .secondary-btn {
+      background: transparent;
+      border: 1px solid #cfcac2;
+      color: #171717;
+    }
+
+    .primary-btn:hover {
+      background: #333;
+    }
+
+    .secondary-btn:hover {
+      border-color: #111;
+    }
+
+    .hero-image {
+      height: 470px;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .hero-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ============================================
+       QUICK BAR
+       ============================================ */
+
+    .quick-bar {
+      background: #111;
+      color: white;
+    }
+
+    .quick-inner {
+      width: min(1100px, 92%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+    }
+
+    .quick-item {
+      padding: 18px 10px;
+      font-size: 13px;
+      font-weight: 700;
+      border-right: 1px solid #333;
+    }
+
+    .quick-item:last-child {
+      border-right: none;
+    }
+
+    /* ============================================
+       GENERAL SECTIONS
+       ============================================ */
+
+    section {
+      scroll-margin-top: 90px;
+    }
+
+    .section {
+      width: min(1100px, 92%);
+      margin: auto;
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 5vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -1.2px;
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: #6b6b6b;
+      max-width: 600px;
+    }
+
+    /* ============================================
+       ABOUT
+       ============================================ */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: #5f5f5f;
+      margin-bottom: 16px;
+    }
+
+    .about-card {
+      background: #eeeae3;
+      padding: 35px;
+      border-radius: 16px;
+    }
+
+    .about-card h3 {
+      margin-bottom: 10px;
+      font-size: 23px;
+    }
+
+    .about-card p {
+      color: #666;
+    }
+
+    /* ============================================
+       MENU
+       ============================================ */
+
+    .menu-section {
+      background: #f0ede7;
+    }
+
+    .menu-section-inner {
+      width: min(1100px, 92%);
+      margin: auto;
+      padding: 85px 0;
+    }
+
+    .category-buttons {
+      display: flex;
+      gap: 9px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 35px;
+      scrollbar-width: none;
+    }
+
+    .category-buttons::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-btn {
+      flex: 0 0 auto;
+      background: transparent;
+      border: 1px solid #cfc8bd;
+      padding: 10px 16px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .category-btn.active,
+    .category-btn:hover {
+      background: #111;
+      color: white;
+      border-color: #111;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: white;
+      border-radius: 13px;
+      overflow: hidden;
+      border: 1px solid #e2ded7;
+    }
+
+    .menu-card-image {
+      height: 190px;
+      overflow: hidden;
+    }
+
+    .menu-card-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .menu-card-content {
+      padding: 18px;
+    }
+
+    .menu-card h3 {
+      font-size: 19px;
+      margin-bottom: 6px;
+    }
+
+    .menu-card p {
+      font-size: 13px;
+      color: #777;
+      min-height: 42px;
+      margin-bottom: 15px;
+    }
+
+    .menu-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .price {
+      font-size: 13px;
+      color: #777;
+      font-weight: 600;
+    }
+
+    .add-btn {
+      background: #111;
+      color: white;
+      border: none;
+      padding: 9px 13px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .add-btn:hover {
+      background: #333;
+    }
+
+    /* ============================================
+       ORDER SECTION
+       ============================================ */
+
+    .order-section {
+      background: #111;
+      color: white;
+    }
+
+    .order-section .section-heading p {
+      color: #aaa;
+    }
+
+    .order-box {
+      background: white;
+      color: #171717;
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .order-types {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .order-type {
+      border: 1px solid #d8d4cd;
+      background: white;
+      padding: 16px;
+      border-radius: 9px;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .order-type span {
+      display: block;
+      font-size: 12px;
+      color: #777;
+      margin-top: 3px;
+      font-weight: 400;
+    }
+
+    .order-type.active {
+      background: #111;
+      color: white;
+      border-color: #111;
+    }
+
+    .order-type.active span {
+      color: #ccc;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #d6d1c9;
+      border-radius: 8px;
+      padding: 12px;
+      outline: none;
+      background: #fff;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #111;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* ============================================
+       CART
+       ============================================ */
+
+    .cart-box {
+      border-top: 1px solid #ddd8d0;
+      margin-top: 10px;
+      padding-top: 25px;
+    }
+
+    .cart-box h3 {
+      margin-bottom: 15px;
+    }
+
+    .cart-empty {
+      color: #777;
+      font-size: 14px;
+      padding: 15px 0;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 13px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cart-item-name {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .quantity-controls button {
+      width: 27px;
+      height: 27px;
+      border: 1px solid #ccc;
+      background: white;
+      border-radius: 5px;
+    }
+
+    .quantity-controls span {
+      min-width: 18px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .remove-btn {
+      border: none;
+      background: transparent;
+      color: #a33;
+      font-size: 12px;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0;
+      font-weight: 800;
+    }
+
+    .price-note {
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .continue-btn,
+    .confirm-btn {
+      width: 100%;
+      border: none;
+      background: #111;
+      color: white;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: 800;
+    }
+
+    .continue-btn:hover,
+    .confirm-btn:hover {
+      background: #333;
+    }
+
+    /* ============================================
+       REVIEW
+       ============================================ */
+
+    #reviewBox {
+      display: none;
+      margin-top: 25px;
+      background: #f5f3ef;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    #reviewBox h3 {
+      margin-bottom: 12px;
+    }
+
+    #reviewContent {
+      font-size: 14px;
+      color: #555;
+      white-space: pre-line;
+      margin-bottom: 18px;
+    }
+
+    /* ============================================
+       CONTACT
+       ============================================ */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      border: 1px solid #e0dcd5;
+      border-radius: 12px;
+      padding: 25px;
+      background: white;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .contact-card p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* ============================================
+       FLOATING CART
+       ============================================ */
+
+    .floating-cart {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 900;
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 13px 18px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+      font-weight: 800;
+    }
+
+    .floating-cart span {
+      background: #9a5b24;
+      border-radius: 50%;
+      padding: 2px 7px;
+      margin-left: 5px;
+      font-size: 11px;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 40px 0;
+    }
+
+    .footer-inner {
+      width: min(1100px, 92%);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    footer p {
+      color: #999;
+      font-size: 13px;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 50px;
+      }
+
+      .hero-image {
+        height: 380px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .header-inner {
+        min-height: 64px;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .header-order {
+        padding: 9px 13px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 42px 0 45px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+        letter-spacing: -1.8px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .hero-image {
+        height: 300px;
+      }
+
+      .quick-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .quick-item {
+        border-bottom: 1px solid #333;
+      }
+
+      .quick-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .section,
+      .menu-section-inner {
+        padding: 60px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 28px;
+      }
+
+      .section-heading h2 {
+        font-size: 31px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-card-image {
+        height: 210px;
+      }
+
+      .order-box {
+        padding: 20px;
+      }
+
+      .order-types {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .cart-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================
+       HEADER
+       ============================================ -->
+
+  <header>
+    <div class="header-inner">
+
+      <a href="#home" class="logo">
+        Feast & <span>Fête</span>
+      </a>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#order">Order</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button
+        class="header-order"
+        onclick="goToOrder()"
+      >
+        Order Now
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+
+  <main id="home">
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Nigerian Food · Kola, Lagos
+        </div>
+
+        <h1>
+          Good food.<br />
+          Made Nigerian.
+        </h1>
+
+        <p>
+          Feast & Fête serves delicious Nigerian meals
+          made for easy pickup and delivery in Kola, Lagos.
+        </p>
+
+        <div class="hero-buttons">
+
+          <button
+            class="primary-btn"
+            onclick="goToMenu()"
+          >
+            View Menu
+          </button>
+
+          <button
+            class="secondary-btn"
+            onclick="goToOrder()"
+          >
+            Order Food
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1000&q=80"
+          alt="Nigerian food"
+        />
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================================
+         QUICK BAR
+         ============================================ -->
+
+    <div class="quick-bar">
+
+      <div class="quick-inner">
+
+        <div class="quick-item">
+          Nigerian Food
+        </div>
+
+        <div class="quick-item">
+          Pickup
+        </div>
+
+        <div class="quick-item">
+          Delivery
+        </div>
+
+        <div class="quick-item">
+          Easy Ordering
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ============================================
+         ABOUT
+         ============================================ -->
+
+    <section id="about" class="section">
+
+      <div class="section-heading">
+        <div class="eyebrow">
+          About Us
+        </div>
+
+        <h2>
+          Food that feels like home.
+        </h2>
+
+        <p>
+          Simple Nigerian food, prepared with care
+          and made easy to enjoy wherever you are.
+        </p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <p>
+            At Feast & Fête, we believe good Nigerian food
+            should be delicious, satisfying and convenient.
+          </p>
+
+          <p>
+            From everyday favorites to tasty sides,
+            our menu brings together familiar Nigerian flavors
+            for individuals, families, students and everyone
+            who simply wants a good meal.
+          </p>
+
+          <p>
+            Order for pickup or delivery and enjoy your food
+            without the hassle.
+          </p>
+
+        </div>
+
+        <div class="about-card">
+
+          <h3>
+            Made for everyday eating.
+          </h3>
+
+          <p>
+            Whether you're grabbing lunch, feeding the family
+            or ordering dinner, Feast & Fête keeps Nigerian food
+            simple and accessible.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================================
+         MENU
+         ============================================ -->
+
+    <section id="menu" class="menu-section">
+
+      <div class="menu-section-inner">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            Our Menu
+          </div>
+
+          <h2>
+            Choose what you're craving.
+          </h2>
+
+          <p>
+            Browse our Nigerian food categories and add
+            your favorites to your order.
+          </p>
+
+        </div>
+
+
+        <!-- CATEGORY BUTTONS -->
+
+        <div class="category-buttons">
+
+          <button
+            class="category-btn active"
+            onclick="showCategory('rice', this)"
+          >
+            Jollof & Rice
+          </button>
+
+          <button
+            class="category-btn"
+            onclick="showCategory('proteins', this)"
+          >
+            Proteins
+          </button>
+
+          <button
+            class="category-btn"
+            onclick="showCategory('seafood', this)"
+          >
+            Seafood
+          </button>
+
+          <button
+            class="category-btn"
+            onclick="showCategory('soups', this)"
+          >
+            Soups
+          </button>
+
+          <button
+            class="category-btn"
+            onclick="showCategory('swallows', this)"
+          >
+            Swallows
+          </button>
+
+          <button
+            class="category-btn"
+            onclick="showCategory('sides', this)"
+          >
+            Sides
+          </button>
+
+          <button
+            class="category-btn"
+            onclick="showCategory('drinks', this)"
+          >
+            Drinks
+          </button>
+
+        </div>
+
+
+        <!-- MENU GRID -->
+
+        <div class="menu-grid">
+
+
+          <!-- JOLLOF & RICE -->
+
+          <article class="menu-card" data-category="rice">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=700&q=80"
+                alt="Jollof Rice"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Jollof Rice</h3>
+
+              <p>
+                Flavorful Nigerian-style jollof rice
+                cooked with rich tomato seasoning.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Jollof Rice')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="menu-card" data-category="rice">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80"
+                alt="Fried Rice"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Fried Rice</h3>
+
+              <p>
+                Nigerian fried rice prepared with
+                vegetables and savory seasoning.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Fried Rice')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="menu-card" data-category="rice">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80"
+                alt="Coconut Rice"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Coconut Rice</h3>
+
+              <p>
+                Fragrant rice cooked with coconut
+                for a rich and comforting taste.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Coconut Rice')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROTEINS -->
+
+          <article class="menu-card" data-category="proteins">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=700&q=80"
+                alt="Chicken"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Chicken</h3>
+
+              <p>
+                Tender chicken prepared to complement
+                your favorite Nigerian meal.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Chicken')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="menu-card" data-category="proteins">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80"
+                alt="Beef"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Beef</h3>
+
+              <p>
+                Savory beef prepared for a hearty
+                Nigerian meal.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Beef')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="menu-card" data-category="proteins">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1510130387422-82bed34b37e9?auto=format&fit=crop&w=700&q=80"
+                alt="Fish"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Fish</h3>
+
+              <p>
+                Deliciously prepared fish to pair
+                with your favorite meal.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Fish')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- SEAFOOD -->
+
+          <article class="menu-card" data-category="seafood">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=700&q=80"
+                alt="Prawns"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Prawns</h3>
+
+              <p>
+                Flavorful prawns prepared for seafood lovers.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Prawns')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="menu-card" data-category="seafood">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1544943910-4c1dc44aab44?auto=format&fit=crop&w=700&q=80"
+                alt="Seafood Fish"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Seafood Fish</h3>
+
+              <p>
+                Fresh fish prepared with bold,
+                satisfying flavors.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Seafood Fish')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="menu-card" data-category="seafood">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=700&q=80"
+                alt="Crab"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Crab</h3>
+
+              <p>
+                Delicious crab prepared as a flavorful
+                seafood option.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Crab')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- SOUPS -->
+
+          <article class="menu-card" data-category="soups">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"
+                alt="Egusi Soup"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Egusi Soup</h3>
+
+              <p>
+                Rich Nigerian egusi soup made with
+                traditional ingredients.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Egusi Soup')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="menu-card" data-category="soups">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80"
+                alt="Ogbono Soup"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Ogbono Soup</h3>
+
+              <p>
+                Traditional Nigerian soup with
+                a rich and satisfying texture.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Ogbono Soup')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="menu-card" data-category="soups">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=700&q=80"
+                alt="Efo Riro"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Efo Riro</h3>
+
+              <p>
+                Flavorful Nigerian vegetable soup
+                cooked with traditional seasoning.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Efo Riro')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- SWALLOWS -->
+
+          <article class="menu-card" data-category="swallows">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"
+                alt="Eba"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Eba</h3>
+
+              <p>
+                Smooth cassava-based Nigerian swallow
+                perfect with soup.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Eba')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="menu-card" data-category="swallows">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1627308595186-e6bb3671265f?auto=format&fit=crop&w=700&q=80"
+                alt="Pounded Yam"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Pounded Yam</h3>
+
+              <p>
+                Soft and smooth Nigerian classic
+                served with your favorite soup.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Pounded Yam')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="menu-card" data-category="swallows">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=700&q=80"
+                alt="Semo"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Semo</h3>
+
+              <p>
+                Smooth semolina swallow made to pair
+                with Nigerian soups.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Semo')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- SIDES -->
+
+          <article class="menu-card" data-category="sides">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"
+                alt="Moi Moi"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Moi Moi</h3>
+
+              <p>
+                Soft steamed Nigerian bean pudding,
+                perfect as a side or light meal.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Moi Moi')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="menu-card" data-category="sides">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1623238913973-21e45cced554?auto=format&fit=crop&w=700&q=80"
+                alt="Plantain"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Plantain</h3>
+
+              <p>
+                Sweet golden plantain prepared
+                as a tasty Nigerian side.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Plantain')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="menu-card" data-category="sides">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=700&q=80"
+                alt="Coleslaw"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Coleslaw</h3>
+
+              <p>
+                Fresh crunchy coleslaw for a
+                refreshing side.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Coleslaw')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- DRINKS -->
+
+          <article class="menu-card" data-category="drinks">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=700&q=80"
+                alt="Soft Drink"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Soft Drink</h3>
+
+              <p>
+                Chilled soft drink to enjoy with your meal.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Soft Drink')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="menu-card" data-category="drinks">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=700&q=80"
+                alt="Juice"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Juice</h3>
+
+              <p>
+                Refreshing juice to pair with your meal.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Juice')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="menu-card" data-category="drinks">
+
+            <div class="menu-card-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=700&q=80"
+                alt="Water"
+              />
+
+            </div>
+
+            <div class="menu-card-content">
+
+              <h3>Water</h3>
+
+              <p>
+                Chilled bottled water.
+              </p>
+
+              <div class="menu-bottom">
+
+                <span class="price">
+                  Price coming soon
+                </span>
+
+                <button
+                  class="add-btn"
+                  onclick="addItem('Water')"
+                >
+                  Add
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================================
+         ORDER
+         ============================================ -->
+
+    <section id="order" class="order-section">
+
+      <div class="section">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            Place Your Order
+          </div>
+
+          <h2>
+            Pickup or delivery.
+          </h2>
+
+          <p>
+            Add your food, provide your details,
+            review your order and send it to Feast & Fête
+            through WhatsApp.
+          </p>
+
+        </div>
+
+
+        <div class="order-box">
+
+
+          <!-- ORDER TYPE -->
+
+          <div class="order-types">
+
+            <button
+              class="order-type active"
+              id="pickupBtn"
+              onclick="chooseOrderType('pickup')"
+            >
+              Pickup
+              <span>
+                Collect your order from us.
+              </span>
+            </button>
+
+            <button
+              class="order-type"
+              id="deliveryBtn"
+              onclick="chooseOrderType('delivery')"
+            >
+              Delivery
+              <span>
+                Have your order delivered.
+              </span>
+            </button>
+
+          </div>
+
+
+          <!-- CUSTOMER DETAILS -->
+
+          <div class="form-grid">
+
+            <div class="form-group">
+
+              <label for="customerName">
+                Name
+              </label>
+
+              <input
+                type="text"
+                id="customerName"
+                placeholder="Your name"
+              />
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="customerPhone">
+                Phone
+              </label>
+
+              <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Your phone number"
+              />
+
+            </div>
+
+
+            <div
+              class="form-group full hidden"
+              id="addressGroup"
+            >
+
+              <label for="address">
+                Delivery Address
+              </label>
+
+              <input
+                type="text"
+                id="address"
+                placeholder="Enter your delivery address"
+              />
+
+            </div>
+
+
+            <div class="form-group full">
+
+              <label for="orderNote">
+                Order Note
+              </label>
+
+              <textarea
+                id="orderNote"
+                placeholder="Anything we should know about your order?"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <!-- CART -->
+
+          <div class="cart-box">
+
+            <h3>
+              Your Order
+            </h3>
+
+            <div id="cartItems">
+
+              <div class="cart-empty">
+                Your cart is empty. Add something from the menu.
+              </div>
+
+            </div>
+
+            <div class="cart-total">
+
+              <span>
+                Total
+              </span>
+
+              <span>
+                Price coming soon
+              </span>
+
+            </div>
+
+            <div class="price-note">
+              Menu prices will be updated once Feast & Fête
+              confirms the official prices.
+            </div>
+
+            <button
+              class="continue-btn"
+              onclick="continueOrder()"
+            >
+              Continue With Order
+            </button>
+
+          </div>
+
+
+          <!-- REVIEW -->
+
+          <div id="reviewBox">
+
+            <h3>
+              Review Your Order
+            </h3>
+
+            <div id="reviewContent"></div>
+
+            <button
+              class="confirm-btn"
+              onclick="finishOrder()"
+            >
+              Confirm Order on WhatsApp
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================================
+         CONTACT
+         ============================================ -->
+
+    <section id="contact" class="section">
+
+      <div class="section-heading">
+
+        <div class="eyebrow">
+          Find Us
+        </div>
+
+        <h2>
+          Feast & Fête
+        </h2>
+
+        <p>
+          Come pick up your order or choose delivery
+          when available.
+        </p>
+
+      </div>
+
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+
+          <h3>
+            Location
+          </h3>
+
+          <p>
+            Kola, Lagos State, Nigeria
+          </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <h3>
+            Pickup
+          </h3>
+
+          <p>
+            Pickup is available.
+          </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <h3>
+            Delivery
+          </h3>
+
+          <p>
+            Delivery available.
+            Delivery areas to be confirmed.
+          </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <h3>
+            Opening Hours
+          </h3>
+
+          <p>
+            Opening hours coming soon.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ============================================
+       FLOATING CART
+       ============================================ -->
+
+  <button
+    class="floating-cart"
+    onclick="goToOrder()"
+  >
+    Cart
+    <span id="cartCount">0</span>
+  </button>
+
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="logo">
+        Feast & <span>Fête</span>
+      </div>
+
+      <p>
+        Nigerian food made for pickup and delivery.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ============================================
+       JAVASCRIPT
+       ============================================ -->
+
+  <script>
+
+    let cart = [];
+
+    let orderType = "pickup";
+
+
+    /* ==========================================
+       CATEGORY FILTER
+       ========================================== */
+
+    function showCategory(category, button) {
+
+      const cards =
+        document.querySelectorAll(".menu-card");
+
+      const buttons =
+        document.querySelectorAll(".category-btn");
+
+      buttons.forEach(function(btn) {
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+
+      cards.forEach(function(card) {
+
+        if (card.dataset.category === category) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+
+      });
+
+    }
+
+
+    /* ==========================================
+       ADD ITEM TO CART
+       ========================================== */
+
+    function addItem(name) {
+
+      const existingItem =
+        cart.find(function(item) {
+          return item.name === name;
+        });
+
+      if (existingItem) {
+
+        existingItem.quantity += 1;
+
+      } else {
+
+        cart.push({
+          name: name,
+          quantity: 1
+        });
+
+      }
+
+      updateCart();
+
+      alert(name + " added to your order.");
+
+    }
+
+
+    /* ==========================================
+       UPDATE CART
+       ========================================== */
+
+    function updateCart() {
+
+      const cartItems =
+        document.getElementById("cartItems");
+
+      const cartCount =
+        document.getElementById("cartCount");
+
+      const totalQuantity =
+        cart.reduce(function(total, item) {
+          return total + item.quantity;
+        }, 0);
+
+      cartCount.textContent = totalQuantity;
+
+
+      if (cart.length === 0) {
+
+        cartItems.innerHTML = `
+          <div class="cart-empty">
+            Your cart is empty. Add something from the menu.
+          </div>
+        `;
+
+        return;
+      }
+
+
+      cartItems.innerHTML = "";
+
+
+      cart.forEach(function(item, index) {
+
+        const cartItem =
+          document.createElement("div");
+
+        cartItem.className = "cart-item";
+
+        cartItem.innerHTML = `
+
+          <div>
+
+            <div class="cart-item-name">
+              ${item.name}
+            </div>
+
+            <small>
+              Price coming soon
+            </small>
+
+          </div>
+
+          <div class="quantity-controls">
+
+            <button
+              onclick="changeQuantity(${index}, -1)"
+            >
+              −
+            </button>
+
+            <span>
+              ${item.quantity}
+            </span>
+
+            <button
+              onclick="changeQuantity(${index}, 1)"
+            >
+              +
+            </button>
+
+            <button
+              class="remove-btn"
+              onclick="removeItem(${index})"
+            >
+              Remove
+            </button>
+
+          </div>
+
+        `;
+
+        cartItems.appendChild(cartItem);
+
+      });
+
+    }
+
+
+    /* ==========================================
+       CHANGE QUANTITY
+       ========================================== */
+
+    function changeQuantity(index, amount) {
+
+      cart[index].quantity += amount;
+
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+
+      updateCart();
+
+    }
+
+
+    /* ==========================================
+       REMOVE ITEM
+       ========================================== */
+
+    function removeItem(index) {
+
+      cart.splice(index, 1);
+
+      updateCart();
+
+    }
+
+
+    /* ==========================================
+       PICKUP / DELIVERY
+       ========================================== */
+
+    function chooseOrderType(type) {
+
+      orderType = type;
+
+      const pickupBtn =
+        document.getElementById("pickupBtn");
+
+      const deliveryBtn =
+        document.getElementById("deliveryBtn");
+
+      const addressGroup =
+        document.getElementById("addressGroup");
+
+
+      pickupBtn.classList.remove("active");
+      deliveryBtn.classList.remove("active");
+
+
+      if (type === "pickup") {
+
+        pickupBtn.classList.add("active");
+
+        addressGroup.classList.add("hidden");
+
+      } else {
+
+        deliveryBtn.classList.add("active");
+
+        addressGroup.classList.remove("hidden");
+
+      }
+
+    }
+
+
+    /* ==========================================
+       CONTINUE TO REVIEW
+       ========================================== */
+
+    function continueOrder() {
+
+      if (cart.length === 0) {
+
+        alert(
+          "Please add at least one item to your order."
+        );
+
+        return;
+      }
+
+
+      const name =
+        document
+          .getElementById("customerName")
+          .value
+          .trim();
+
+      const phone =
+        document
+          .getElementById("customerPhone")
+          .value
+          .trim();
+
+      const address =
+        document
+          .getElementById("address")
+          .value
+          .trim();
+
+
+      if (!name) {
+
+        alert("Please enter your name.");
+
+        return;
+      }
+
+
+      if (!phone) {
+
+        alert("Please enter your phone number.");
+
+        return;
+      }
+
+
+      if (
+        orderType === "delivery" &&
+        !address
+      ) {
+
+        alert(
+          "Please enter your delivery address."
+        );
+
+        return;
+      }
+
+
+      createReview();
+
+    }
+
+
+    /* ==========================================
+       CREATE REVIEW
+       ========================================== */
+
+    function createReview() {
+
+      const name =
+        document
+          .getElementById("customerName")
+          .value
+          .trim();
+
+      const phone =
+        document
+          .getElementById("customerPhone")
+          .value
+          .trim();
+
+      const address =
+        document
+          .getElementById("address")
+          .value
+          .trim();
+
+      const note =
+        document
+          .getElementById("orderNote")
+          .value
+          .trim();
+
+
+      let reviewText =
+        "Customer: " + name + "\n";
+
+      reviewText +=
+        "Phone: " + phone + "\n";
+
+      reviewText +=
+        "Order Type: " +
+        (
+          orderType === "pickup"
+            ? "Pickup"
+            : "Delivery"
+        ) +
+        "\n";
+
+
+      if (orderType === "delivery") {
+
+        reviewText +=
+          "Address: " + address + "\n";
+
+      }
+
+
+      reviewText +=
+        "\nORDER ITEMS\n";
+
+
+      cart.forEach(function(item) {
+
+        reviewText +=
+          "• " +
+          item.name +
+          " × " +
+          item.quantity +
+          "\n";
+
+      });
+
+
+      if (note) {
+
+        reviewText +=
+          "\nNote: " +
+          note;
+
+      }
+
+
+      reviewText +=
+        "\n\nTotal: Price coming soon";
+
+
+      document.getElementById(
+        "reviewContent"
+      ).textContent = reviewText;
+
+
+      document.getElementById(
+        "reviewBox"
+      ).style.display = "block";
+
+
+      document.getElementById(
+        "reviewBox"
+      ).scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+    }
+
+
+    /* ==========================================
+       WHATSAPP ORDER
+       ========================================== */
+
+    function finishOrder() {
+
+      /*
+        TEMPORARY TEST NUMBER.
+
+        Replace this with the official
+        Feast & Fête WhatsApp number
+        before the website goes live.
+
+        Format:
+        country code + number
+        with NO +, spaces or brackets.
+      */
+
+      const WHATSAPP_NUMBER =
+        "2250574539640";
+
+
+      const name =
+        document
+          .getElementById("customerName")
+          .value
+          .trim();
+
+      const phone =
+        document
+          .getElementById("customerPhone")
+          .value
+          .trim();
+
+      const address =
+        document
+          .getElementById("address")
+          .value
+          .trim();
+
+      const note =
+        document
+          .getElementById("orderNote")
+          .value
+          .trim();
+
+
+      if (cart.length === 0) {
+
+        alert(
+          "Please add at least one item to your order."
+        );
+
+        return;
+      }
+
+
+      let message =
+        "Hello Feast & Fête 👋\n\n" +
+        "I'd like to place an order.\n\n" +
+        "ORDER ITEMS\n";
+
+
+      cart.forEach(function(item) {
+
+        message +=
+          "• " +
+          item.name +
+          " × " +
+          item.quantity +
+          "\n";
+
+      });
+
+
+      message +=
+        "\nOrder Type: " +
+        (
+          orderType === "pickup"
+            ? "Pickup"
+            : "Delivery"
+        ) +
+        "\n";
+
+
+      message +=
+        "Name: " +
+        name +
+        "\n";
+
+
+      message +=
+        "Phone: " +
+        phone +
+        "\n";
+
+
+      if (orderType === "delivery") {
+
+        message +=
+          "Address: " +
+          address +
+          "\n";
+
+      }
+
+
+      if (note) {
+
+        message +=
+          "Note: " +
+          note +
+          "\n";
+
+      }
+
+
+      message +=
+        "\nThank you.";
+
+
+      const whatsappURL =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
+
+    }
+
+
+    /* ==========================================
+       GO TO MENU
+       ========================================== */
+
+    function goToMenu() {
+
+      document
+        .getElementById("menu")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+
+    /* ==========================================
+       GO TO ORDER
+       ========================================== */
+
+    function goToOrder() {
+
+      document
+        .getElementById("order")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+
+    /* ==========================================
+       INITIAL MENU STATE
+       ========================================== */
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function() {
+
+        const firstButton =
+          document.querySelector(
+            ".category-btn.active"
+          );
+
+        if (firstButton) {
+
+          showCategory(
+            "rice",
+            firstButton
+          );
+
+        }
+
+        updateCart();
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
