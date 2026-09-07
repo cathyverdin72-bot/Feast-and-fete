@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Feast & Fête | Nigerian Food in Lagos</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #faf8f3;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1d4d2b;
+      white-space: nowrap;
+    }
+
+    .location {
+      font-size: 11px;
+      color: #777;
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 14px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 60px 20px 45px;
+      background: #f3eee2;
+    }
+
+    .hero-inner {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: #8a5a20;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 9vw, 64px);
+      line-height: 1.05;
+      color: #173c22;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .hero-actions {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      border: none;
+      border-radius: 10px;
+      padding: 13px 20px;
+      font-weight: 700;
+    }
+
+    .primary-btn {
+      background: #1d4d2b;
+      color: white;
+    }
+
+    .secondary-btn {
+      background: white;
+      color: #1d4d2b;
+      border: 1px solid #d7d7d7;
+    }
+
+    /* =========================
+       ORDER STRIP
+    ========================= */
+
+    .order-strip {
+      background: #1d4d2b;
+      color: white;
+      padding: 14px 18px;
+    }
+
+    .order-strip-inner {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      text-align: center;
+    }
+
+    .strip-item {
+      font-size: 12px;
+    }
+
+    .strip-item strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    section {
+      padding: 55px 18px;
+    }
+
+    .section-inner {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 28px;
+      color: #173c22;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      background: white;
+    }
+
+    .about-text {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      color: #555;
+      font-size: 15px;
+    }
+
+    /* =========================
+       MENU
+    ========================= */
+
+    .menu-section {
+      background: #faf8f3;
+    }
+
+    .category-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 25px;
+    }
+
+    .category-btn {
+      border: 1px solid #d8d8d8;
+      background: white;
+      color: #333;
+      padding: 10px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .category-btn.active {
+      background: #1d4d2b;
+      color: white;
+      border-color: #1d4d2b;
+    }
+
+    .category-content {
+      display: none;
+    }
+
+    .category-content.active {
+      display: block;
+    }
+
+    .category-heading {
+      margin-bottom: 15px;
+      color: #173c22;
+      font-size: 20px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .menu-card {
+      background: white;
+      border: 1px solid #e8e4da;
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .menu-card h4 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: #222;
+    }
+
+    .menu-card p {
+      color: #777;
+      font-size: 12px;
+      margin-bottom: 13px;
+    }
+
+    .menu-card button {
+      width: 100%;
+      border: none;
+      background: #1d4d2b;
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .menu-note {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* =========================
+       ORDER AREA
+    ========================= */
+
+    .order-section {
+      background: white;
+    }
+
+    .order-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .order-box {
+      border: 1px solid #e3e3e3;
+      border-radius: 14px;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .order-box h3 {
+      font-size: 19px;
+      color: #173c22;
+      margin-bottom: 16px;
+    }
+
+    /* CART */
+
+    #cartItems {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .empty-cart {
+      padding: 20px;
+      background: #faf8f3;
+      border-radius: 10px;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    .cart-item-info strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .cart-item-info span {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .quantity-controls button {
+      width: 28px;
+      height: 28px;
+      border: 1px solid #ddd;
+      background: white;
+      border-radius: 6px;
+    }
+
+    .remove-btn {
+      color: #a33;
+      border: none !important;
+      background: transparent !important;
+      font-size: 11px;
+      width: auto !important;
+    }
+
+    /* ORDER TYPE */
+
+    .order-type-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .type-btn {
+      padding: 12px;
+      border: 1px solid #ddd;
+      background: white;
+      border-radius: 9px;
+      font-weight: 700;
+      color: #444;
+    }
+
+    .type-btn.active {
+      background: #1d4d2b;
+      color: white;
+      border-color: #1d4d2b;
+    }
+
+    .form-group {
+      margin-bottom: 13px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #444;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 11px;
+      outline: none;
+      background: #fff;
+    }
+
+    .form-group textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .delivery-address {
+      display: none;
+    }
+
+    .delivery-address.show {
+      display: block;
+    }
+
+    .continue-btn,
+    .whatsapp-btn {
+      width: 100%;
+      border: none;
+      padding: 13px;
+      border-radius: 9px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    .continue-btn {
+      background: #1d4d2b;
+      color: white;
+    }
+
+    .continue-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* =========================
+       REVIEW
+    ========================= */
+
+    .review-box {
+      display: none;
+      margin-top: 25px;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 20px;
+      background: #faf8f3;
+    }
+
+    .review-box.show {
+      display: block;
+    }
+
+    .review-box h3 {
+      color: #173c22;
+      margin-bottom: 15px;
+    }
+
+    .review-line {
+      padding: 8px 0;
+      border-bottom: 1px solid #e6e6e6;
+      font-size: 13px;
+    }
+
+    .review-items {
+      margin-bottom: 10px;
+    }
+
+    .review-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 5px 0;
+    }
+
+    .whatsapp-btn {
+      background: #1d4d2b;
+      color: white;
+      margin-top: 15px;
+    }
+
+    .review-note {
+      font-size: 11px;
+      color: #777;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    /* =========================
+       HOW IT WORKS
+    ========================= */
+
+    .how-section {
+      background: #f3eee2;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .step {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      background: #1d4d2b;
+      color: white;
+      font-weight: 700;
+    }
+
+    .step h3 {
+      font-size: 16px;
+      margin-bottom: 7px;
+    }
+
+    .step p {
+      font-size: 13px;
+      color: #777;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .contact-card {
+      background: #faf8f3;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .contact-card h3 {
+      font-size: 15px;
+      margin-bottom: 5px;
+      color: #173c22;
+    }
+
+    .contact-card p {
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #173c22;
+      color: white;
+      padding: 35px 18px;
+      text-align: center;
+    }
+
+    footer h2 {
+      font-size: 21px;
+      margin-bottom: 6px;
+    }
+
+    footer p {
+      font-size: 12px;
+      opacity: .8;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 750px) {
+
+      .header-inner {
+        padding: 13px 15px;
+      }
+
+      nav {
+        gap: 8px;
+      }
+
+      nav a {
+        font-size: 11px;
+      }
+
+      .location {
+        font-size: 9px;
+      }
+
+      .order-strip-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      section {
+        padding: 45px 15px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .order-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 48px 18px 38px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .section-title h2 {
+        font-size: 25px;
+      }
+    }
+
+    @media (max-width: 420px) {
+
+      nav a:nth-child(1),
+      nav a:nth-child(2) {
+        display: none;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+    <div class="header-inner">
+
+      <div>
+        <div class="logo">Feast &amp; Fête</div>
+        <div class="location">Lagos · Nigeria</div>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#order">Order</a>
+        <a href="#how">How It Works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero">
+
+    <div class="hero-inner">
+
+      <div class="eyebrow">Nigerian Food · Kola, Lagos</div>
+
+      <h1>Feast &amp; Fête</h1>
+
+      <p>
+        Delicious Nigerian food made for pickup and delivery.
+        Choose your meal, place your order and enjoy.
+      </p>
+
+      <div class="hero-actions">
+
+        <button class="primary-btn" onclick="goToMenu()">
+          View Menu
+        </button>
+
+        <button class="secondary-btn" onclick="goToOrder()">
+          Order Now
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ORDER STRIP
+  ========================= -->
+
+  <div class="order-strip">
+
+    <div class="order-strip-inner">
+
+      <div class="strip-item">
+        <strong>Nigerian Food</strong>
+        Authentic favourites
+      </div>
+
+      <div class="strip-item">
+        <strong>Pickup</strong>
+        Easy collection
+      </div>
+
+      <div class="strip-item">
+        <strong>Delivery</strong>
+        Delivered to you
+      </div>
+
+      <div class="strip-item">
+        <strong>Easy Ordering</strong>
+        Simple process
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
+  <section class="about" id="about">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+        <h2>Good Nigerian food, made simple.</h2>
+      </div>
+
+      <p class="about-text">
+        Feast &amp; Fête brings together familiar Nigerian favourites,
+        prepared for convenient pickup and delivery in Lagos.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MENU
+  ========================= -->
+
+  <section class="menu-section" id="menu">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>Our Menu</h2>
+
+        <p>
+          Choose a category to explore the available varieties.
+        </p>
+
+      </div>
+
+
+      <!-- CATEGORY BUTTONS -->
+
+      <div class="category-buttons">
+
+        <button class="category-btn active"
+                onclick="showCategory('rice', this)">
+          Jollof &amp; Rice
+        </button>
+
+        <button class="category-btn"
+                onclick="showCategory('proteins', this)">
+          Proteins
+        </button>
+
+        <button class="category-btn"
+                onclick="showCategory('seafood', this)">
+          Seafood
+        </button>
+
+        <button class="category-btn"
+                onclick="showCategory('soups', this)">
+          Soups
+        </button>
+
+        <button class="category-btn"
+                onclick="showCategory('swallows', this)">
+          Swallows
+        </button>
+
+        <button class="category-btn"
+                onclick="showCategory('sides', this)">
+          Sides
+        </button>
+
+        <button class="category-btn"
+                onclick="showCategory('drinks', this)">
+          Drinks
+        </button>
+
+      </div>
+
+
+      <!-- RICE -->
+
+      <div class="category-content active" id="rice">
+
+        <h3 class="category-heading">
+          Jollof &amp; Rice
+        </h3>
+
+        <div class="menu-grid">
+
+          <div class="menu-card">
+            <h4>Jollof Rice</h4>
+            <p>Classic Nigerian jollof rice.</p>
+            <button onclick="addItem('Jollof Rice')">
+              Add to Order
+            </button>
+          </div>
+
+          <div class="menu-card">
+            <h4>Fried Rice</h4>
+            <p>Flavourful Nigerian fried rice.</p>
+            <button onclick="addItem('Fried Rice')">
+              Add to Order
+            </button>
+          </div>
+
+          <div class="menu-card">
+            <h4>Coconut Rice</h4>
+            <p>Rich and aromatic coconut rice.</p>
+            <button onclick="addItem('Coconut Rice')">
+              Add to Order
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- PROTEINS -->
+
+      <div class="category-content" id="proteins">
+
+        <h3 class="category-heading">
+          Proteins
+        </h3>
+
+        <div class="menu-grid">
+
+          <div class="menu-card">
+            <h4>Chicken</h4>
+            <p>Chicken prepared to complement your meal.</p>
+            <button onclick="addItem('Chicken')">
+              Add to Order
+            </button>
+          </div>
+
+          <div class="menu-card">
+            <h4>Beef</h4>
+            <p>Tender beef option.</p>
+            <button onclick="addItem('Beef')">
+              Add to Order
+            </button>
+          </div>
+
+          <div class="menu-card">
+            <h4>Fish</h4>
+            <p>Fish protein option.</p>
+            <button onclick="addItem('Fish')">
+              Add to Order
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SEAFOOD -->
+
+      <div class="category-content" id="seafood">
+
+        <h3 class="category-heading">
+          Seafood
+        </h3>
+
+        <div class="menu-grid">
+
+          <div class="menu-card">
+            <h4>Prawns</h4>
+            <p>Seafood option with prawns.</p>
+            <button onclick="addItem('Prawns')">
+              Add to Order
+            </button>
+          </div>
+
+          <div class="menu-card">
+            <h4>Seafood Fish</h4>
+            <p>Fresh seafood selection.</p>
+            <button onclick="addItem('Seafood Fish')">
+              Add to Order
+            </button>
+          </div>
+
+          <div class="menu-card">
+            <h4>Crab</h4>
+            <p>Crab seafood option.</p>
+            <button onclick="addItem('Crab')">
+              Add to Order
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SOUPS -->
+
+      <div class="category-content" id="soups">
+
+        <h3 class="category-heading">
+          Soups
+        </h3>
+
+        <div class="menu-grid">
+
+          <div class="menu-card">
+            <h4>Egusi Soup</h4>
+            <p>Popular Nigerian soup.</p>
+            <button onclick="addItem('Egusi Soup')">
+              Add to Order
+            </button>
+          </div>
+
+          <div class="menu-card">
+            <h4>Ogbono Soup</h4>
+            <p>Traditional Nigerian soup.</p>
+            <button onclick="addItem('Ogbono Soup')">
+              Add to Order
+            </button>
+          </div>
+
+          <div class="menu-card">
+            <h4>Efo Riro</h4>
+            <p>Rich Nigerian vegetable soup.</p>
+            <button onclick="addItem('Efo Riro')">
+              Add to Order
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SWALLOWS -->
+
+      <div class="category-content" id="swallows">
+
+        <h3 class="category-heading">
+          Swallows
+        </h3>
+
+        <div class="menu-grid">
+
+          <div class="menu-card">
+            <h4>Eba</h4>
+            <p>Classic garri-based swallow.</p>
+            <button onclick="addItem('Eba')">
+              Add to Order
+            </button>
+          </div>
+
+          <div class="menu-card">
+            <h4>Pounded Yam</h4>
+            <p>Soft traditional pounded yam.</p>
+            <button onclick="addItem('Pounded Yam')">
+              Add to Order
+            </button>
+          </div>
+
+          <div class="menu-card">
+            <h4>Semo</h4>
+            <p>Smooth semolina swallow.</p>
+            <button onclick="addItem('Semo')">
+              Add to Order
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SIDES -->
+
+      <div class="category-content" id="sides">
+
+        <h3 class="category-heading">
+          Sides
+        </h3>
+
+        <div class="menu-grid">
+
+          <div class="menu-card">
+            <h4>Moi Moi</h4>
+            <p>Steamed Nigerian bean pudding.</p>
+            <button onclick="addItem('Moi Moi')">
+              Add to Order
+            </button>
+          </div>
+
+          <div class="menu-card">
+            <h4>Plantain</h4>
+            <p>Sweet fried plantain.</p>
+            <button onclick="addItem('Plantain')">
+              Add to Order
+            </button>
+          </div>
+
+          <div class="menu-card">
+            <h4>Coleslaw</h4>
+            <p>Fresh crunchy side.</p>
+            <button onclick="addItem('Coleslaw')">
+              Add to Order
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- DRINKS -->
+
+      <div class="category-content" id="drinks">
+
+        <h3 class="category-heading">
+          Drinks
+        </h3>
+
+        <div class="menu-grid">
+
+          <div class="menu-card">
+            <h4>Soft Drink</h4>
+            <p>Chilled soft drink.</p>
+            <button onclick="addItem('Soft Drink')">
+              Add to Order
+            </button>
+          </div>
+
+          <div class="menu-card">
+            <h4>Juice</h4>
+            <p>Refreshing juice.</p>
+            <button onclick="addItem('Juice')">
+              Add to Order
+            </button>
+          </div>
+
+          <div class="menu-card">
+            <h4>Water</h4>
+            <p>Bottled water.</p>
+            <button onclick="addItem('Water')">
+              Add to Order
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <p class="menu-note">
+        Menu items and prices shown here are temporary until the official
+        Feast &amp; Fête menu is confirmed.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ORDER
+  ========================= -->
+
+  <section class="order-section" id="order">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>Your Order</h2>
+
+        <p>
+          Build your order and choose pickup or delivery.
+        </p>
+
+      </div>
+
+
+      <div class="order-layout">
+
+
+        <!-- CART -->
+
+        <div class="order-box">
+
+          <h3>Your Food</h3>
+
+          <div id="cartItems">
+
+            <div class="empty-cart">
+              Your cart is empty.
+              Add something from the menu.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CUSTOMER DETAILS -->
+
+        <div class="order-box">
+
+          <h3>Order Details</h3>
+
+
+          <div class="order-type-buttons">
+
+            <button
+              class="type-btn active"
+              id="pickupBtn"
+              onclick="chooseOrderType('Pickup')">
+              Pickup
+            </button>
+
+            <button
+              class="type-btn"
+              id="deliveryBtn"
+              onclick="chooseOrderType('Delivery')">
+              Delivery
+            </button>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="customerName">
+              Your Name
+            </label>
+
+            <input
+              type="text"
+              id="customerName"
+              placeholder="Enter your name">
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="customerPhone">
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              id="customerPhone"
+              placeholder="Enter your phone number">
+
+          </div>
+
+
+          <div class="form-group delivery-address"
+               id="deliveryAddressGroup">
+
+            <label for="customerAddress">
+              Delivery Address
+            </label>
+
+            <textarea
+              id="customerAddress"
+              placeholder="Enter your delivery address"></textarea>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="customerNote">
+              Order Note
+            </label>
+
+            <textarea
+              id="customerNote"
+              placeholder="Any special request?"></textarea>
+
+          </div>
+
+
+          <button
+            class="continue-btn"
+            id="continueBtn"
+            onclick="continueOrder()"
+            disabled>
+            Continue With Order
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           REVIEW
+      ========================= -->
+
+      <div class="review-box" id="reviewBox">
+
+        <h3>Review Your Order</h3>
+
+        <div class="review-items" id="reviewItems"></div>
+
+        <div class="review-line">
+          <strong>Order Type:</strong>
+          <span id="reviewType"></span>
+        </div>
+
+        <div class="review-line">
+          <strong>Name:</strong>
+          <span id="reviewName"></span>
+        </div>
+
+        <div class="review-line">
+          <strong>Phone:</strong>
+          <span id="reviewPhone"></span>
+        </div>
+
+        <div class="review-line" id="reviewAddressLine">
+          <strong>Address:</strong>
+          <span id="reviewAddress"></span>
+        </div>
+
+        <div class="review-line" id="reviewNoteLine">
+          <strong>Note:</strong>
+          <span id="reviewNote"></span>
+        </div>
+
+
+        <button
+          class="whatsapp-btn"
+          onclick="finishOrder()">
+          Confirm Order on WhatsApp
+        </button>
+
+        <p class="review-note">
+          Your order details will be prepared in WhatsApp for Feast &amp; Fête.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       HOW IT WORKS
+  ========================= -->
+
+  <section class="how-section" id="how">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>How It Works</h2>
+
+        <p>
+          Ordering your meal is simple.
+        </p>
+
+      </div>
+
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div class="step-number">1</div>
+
+          <h3>Choose Your Food</h3>
+
+          <p>
+            Browse the categories and add your favourite meals.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">2</div>
+
+          <h3>Place Your Order</h3>
+
+          <p>
+            Select pickup or delivery and enter your details.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">3</div>
+
+          <h3>Enjoy Your Meal</h3>
+
+          <p>
+            Collect your order or have it delivered.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section class="contact" id="contact">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>Contact Feast &amp; Fête</h2>
+
+        <p>
+          We are preparing to serve you.
+        </p>
+
+      </div>
+
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+
+          <h3>Location</h3>
+
+          <p>
+            Kola, Lagos State, Nigeria
+          </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <h3>Pickup</h3>
+
+          <p>
+            Pickup available
+          </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <h3>Delivery</h3>
+
+          <p>
+            Delivery available · Area to be confirmed
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <h2>Feast &amp; Fête</h2>
+
+    <p>
+      Nigerian food made for pickup and delivery.
+    </p>
+
+    <p style="margin-top:10px;">
+      © 2026 Feast &amp; Fête. All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    /*
+      IMPORTANT:
+      Replace this temporary number when the owner
+      gives you the official Feast & Fête WhatsApp number.
+
+      Nigerian numbers should be written internationally,
+      without the + sign or spaces.
+
+      Example:
+      2348012345678
+    */
+
+    const WHATSAPP_NUMBER = "2340000000000";
+
+
+    let cart = [];
+
+    let selectedOrderType = "Pickup";
+
+
+    /* =========================
+       CATEGORY SYSTEM
+    ========================= */
+
+    function showCategory(category, button) {
+
+      const categories =
+        document.querySelectorAll(".category-content");
+
+      const buttons =
+        document.querySelectorAll(".category-btn");
+
+
+      categories.forEach(function(item) {
+
+        item.classList.remove("active");
+
+      });
+
+
+      buttons.forEach(function(item) {
+
+        item.classList.remove("active");
+
+      });
+
+
+      document
+        .getElementById(category)
+        .classList.add("active");
+
+
+      button.classList.add("active");
+
+    }
+
+
+    /* =========================
+       ADD ITEM
+    ========================= */
+
+    function addItem(name) {
+
+      const existingItem =
+        cart.find(function(item) {
+          return item.name === name;
+        });
+
+
+      if (existingItem) {
+
+        existingItem.quantity += 1;
+
+      } else {
+
+        cart.push({
+          name: name,
+          quantity: 1
+        });
+
+      }
+
+
+      updateCart();
+
+      goToOrder();
+
+    }
+
+
+    /* =========================
+       UPDATE CART
+    ========================= */
+
+    function updateCart() {
+
+      const cartContainer =
+        document.getElementById("cartItems");
+
+      const continueBtn =
+        document.getElementById("continueBtn");
+
+
+      if (cart.length === 0) {
+
+        cartContainer.innerHTML = `
+          <div class="empty-cart">
+            Your cart is empty.
+            Add something from the menu.
+          </div>
+        `;
+
+        continueBtn.disabled = true;
+
+        return;
+
+      }
+
+
+      cartContainer.innerHTML = "";
+
+
+      cart.forEach(function(item, index) {
+
+        const div =
+          document.createElement("div");
+
+        div.className = "cart-item";
+
+
+        div.innerHTML = `
+
+          <div class="cart-item-info">
+
+            <strong>${item.name}</strong>
+
+            <span>
+              Quantity: ${item.quantity}
+            </span>
+
+          </div>
+
+
+          <div class="quantity-controls">
+
+            <button onclick="changeQuantity(${index}, -1)">
+              −
+            </button>
+
+            <span>
+              ${item.quantity}
+            </span>
+
+            <button onclick="changeQuantity(${index}, 1)">
+              +
+            </button>
+
+            <button
+              class="remove-btn"
+              onclick="removeItem(${index})">
+              Remove
+            </button>
+
+          </div>
+
+        `;
+
+
+        cartContainer.appendChild(div);
+
+      });
+
+
+      continueBtn.disabled = false;
+
+    }
+
+
+    /* =========================
+       CHANGE QUANTITY
+    ========================= */
+
+    function changeQuantity(index, amount) {
+
+      cart[index].quantity += amount;
+
+
+      if (cart[index].quantity <= 0) {
+
+        cart.splice(index, 1);
+
+      }
+
+
+      updateCart();
+
+    }
+
+
+    /* =========================
+       REMOVE ITEM
+    ========================= */
+
+    function removeItem(index) {
+
+      cart.splice(index, 1);
+
+      updateCart();
+
+    }
+
+
+    /* =========================
+       PICKUP / DELIVERY
+    ========================= */
+
+    function chooseOrderType(type) {
+
+      selectedOrderType = type;
+
+
+      const pickupBtn =
+        document.getElementById("pickupBtn");
+
+      const deliveryBtn =
+        document.getElementById("deliveryBtn");
+
+      const addressGroup =
+        document.getElementById("deliveryAddressGroup");
+
+
+      pickupBtn.classList.remove("active");
+
+      deliveryBtn.classList.remove("active");
+
+
+      if (type === "Pickup") {
+
+        pickupBtn.classList.add("active");
+
+        addressGroup.classList.remove("show");
+
+      } else {
+
+        deliveryBtn.classList.add("active");
+
+        addressGroup.classList.add("show");
+
+      }
+
+    }
+
+
+    /* =========================
+       CONTINUE
+    ========================= */
+
+    function continueOrder() {
+
+      if (cart.length === 0) {
+
+        alert("Please add at least one item to your order.");
+
+        return;
+
+      }
+
+
+      const name =
+        document.getElementById("customerName").value.trim();
+
+      const phone =
+        document.getElementById("customerPhone").value.trim();
+
+      const address =
+        document.getElementById("customerAddress").value.trim();
+
+
+      if (!name) {
+
+        alert("Please enter your name.");
+
+        return;
+
+      }
+
+
+      if (!phone) {
+
+        alert("Please enter your phone number.");
+
+        return;
+
+      }
+
+
+      if (
+        selectedOrderType === "Delivery" &&
+        !address
+      ) {
+
+        alert("Please enter your delivery address.");
+
+        return;
+
+      }
+
+
+      createReview();
+
+    }
+
+
+    /* =========================
+       CREATE REVIEW
+    ========================= */
+
+    function createReview() {
+
+      const reviewBox =
+        document.getElementById("reviewBox");
+
+      const reviewItems =
+        document.getElementById("reviewItems");
+
+
+      const name =
+        document.getElementById("customerName").value.trim();
+
+      const phone =
+        document.getElementById("customerPhone").value.trim();
+
+      const address =
+        document.getElementById("customerAddress").value.trim();
+
+      const note =
+        document.getElementById("customerNote").value.trim();
+
+
+      reviewItems.innerHTML = "";
+
+
+      cart.forEach(function(item) {
+
+        const row =
+          document.createElement("div");
+
+        row.className = "review-item";
+
+
+        row.innerHTML = `
+
+          <span>
+            ${item.name}
+          </span>
+
+          <strong>
+            × ${item.quantity}
+          </strong>
+
+        `;
+
+
+        reviewItems.appendChild(row);
+
+      });
+
+
+      document.getElementById("reviewType").textContent =
+        selectedOrderType;
+
+      document.getElementById("reviewName").textContent =
+        name;
+
+      document.getElementById("reviewPhone").textContent =
+        phone;
+
+
+      const addressLine =
+        document.getElementById("reviewAddressLine");
+
+
+      if (selectedOrderType === "Delivery") {
+
+        addressLine.style.display = "block";
+
+        document.getElementById("reviewAddress").textContent =
+          address;
+
+      } else {
+
+        addressLine.style.display = "none";
+
+      }
+
+
+      const noteLine =
+        document.getElementById("reviewNoteLine");
+
+
+      if (note) {
+
+        noteLine.style.display = "block";
+
+        document.getElementById("reviewNote").textContent =
+          note;
+
+      } else {
+
+        noteLine.style.display = "none";
+
+      }
+
+
+      reviewBox.classList.add("show");
+
+
+      reviewBox.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    }
+
+
+    /* =========================
+       WHATSAPP ORDER
+    ========================= */
+
+    function finishOrder() {
+
+      /*
+        Safety check so the temporary number
+        cannot accidentally be used as a real order number.
+      */
+
+      if (WHATSAPP_NUMBER === "2340000000000") {
+
+        alert(
+          "The order is ready, but the official Feast & Fête WhatsApp number has not been added yet."
+        );
+
+        return;
+
+      }
+
+
+      const name =
+        document.getElementById("customerName").value.trim();
+
+      const phone =
+        document.getElementById("customerPhone").value.trim();
+
+      const address =
+        document.getElementById("customerAddress").value.trim();
+
+      const note =
+        document.getElementById("customerNote").value.trim();
+
+
+      let message =
+        "Hello Feast & Fête 👋\n\n";
+
+      message +=
+        "I'd like to place an order.\n\n";
+
+
+      message +=
+        "ORDER ITEMS\n";
+
+
+      cart.forEach(function(item) {
+
+        message +=
+          "• " +
+          item.name +
+          " × " +
+          item.quantity +
+          "\n";
+
+      });
+
+
+      message += "\n";
+
+      message +=
+        "Order Type: " +
+        selectedOrderType +
+        "\n";
+
+      message +=
+        "Name: " +
+        name +
+        "\n";
+
+      message +=
+        "Phone: " +
+        phone +
+        "\n";
+
+
+      if (selectedOrderType === "Delivery") {
+
+        message +=
+          "Address: " +
+          address +
+          "\n";
+
+      }
+
+
+      if (note) {
+
+        message +=
+          "Note: " +
+          note +
+          "\n";
+
+      }
+
+
+      message +=
+        "\nThank you.";
+
+
+      const whatsappURL =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
+
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    function goToMenu() {
+
+      document
+        .getElementById("menu")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+
+    function goToOrder() {
+
+      document
+        .getElementById("order")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+
+  </script>
+
+</body>
+</html>
